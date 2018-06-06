@@ -1,0 +1,40 @@
+<ul class="nav nav-tabs">
+  <li class="nav-item">
+    <a  
+    class="nav-link" 
+    [class.active]="monitorLink === 'cadastro'" 
+    (click)="monitorLink = 'cadastro'"
+    href="#">
+        CADASTRO
+    </a> 
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" 
+    [class.active]="monitorLink === 'lista'"
+    (click)="monitorLink = 'lista'"
+    href="#">
+      LISTA
+    </a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link"
+    [class.active]="monitorLink === 'horario'"
+    (click)="monitorLink = 'horario'"
+    href="#"
+    >
+    CADASTRO DE HORÁRIO
+  </a>
+  </li>
+</ul>
+
+<div [ngSwitch] = "monitorLink">
+  <div *ngSwitchCase="'cadastro'">
+    <app-cadastro-estagiario></app-cadastro-estagiario>
+  </div>
+  <div *ngSwitchCase="'lista'">
+      <app-listar-os-estagarios></app-listar-os-estagarios>
+  </div>
+  <div *ngSwitchCase="'horario'">
+    NESSA ABA TAMBÉM DEVERIA APARECER O HORÁRIO
+  </div>
+</div>
