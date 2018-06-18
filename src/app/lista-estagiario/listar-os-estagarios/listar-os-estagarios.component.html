@@ -2,14 +2,29 @@
 <div class="container">
     <div class="card border-dark mb-3" style="max-width: 90rem;">
     <div class="card-header">
-      Lista de Estágiarios 
+      Lista de Estágiarios
     </div>
 
     <div class="card-body">
+
+
+
+      <div class="row">
+        <div class="col-sm-3">
+          <label for="filtro">Filtro</label>
+        </div>
+        <div class="col-sm-3">
+          <label for="buscarInput">Buscar</label>
+        </div>
+
+
+      </div>
+
+
       <div class="row">
           <div class="col-sm-3">
             <div class="form-group">
-              <label for="filtro">Filtro</label>
+
               <select (change)="setFiltro($event)"
                       id="filtro"
                       class="form-control"
@@ -22,7 +37,7 @@
           </div>
           <div class="col-sm-3">
               <div class="form-group">
-                <label for="buscarInput">Buscar</label>
+
                 <input type="text"
                        class="form-control"
                        id="buscarInput"
@@ -30,7 +45,10 @@
                        formControlName="buscar">
               </div>
          </div>
-                <button class="btn btn-success my-md-4 my-md-0" type="submit">Buscar</button>
+        <div class="col-sm-1  ">
+          <button class="btn btn-success" type="submit">Buscar</button>
+        </div>
+
        </div>
     </div>
 
@@ -47,8 +65,8 @@
                   </tr>
             </tbody>
         </table>
-      </body>   
- </div>   
+      </body>
+ </div>
 </div>
-   
+
 

@@ -7,38 +7,52 @@
         Lista de Orientador
       </div>
 
-     <div class="card-body">
-       <div class="row">
-         <div class="col-sm-3">
-            <div class="form-group">
+          <div class="card-body">
+
+            <div class="row">
+              <div class="col-sm-3">
                 <label for="filtro">Filtro</label>
-                <select (change)="setFiltro($event)"
-                        id="filtro"
-                        class="form-control"
-                        formControlName="filtro">
-                  <option value=""></option>
-                  <option value=""></option>
-                  <option value=""></option>
-                </select>
               </div>
-         </div>
-         <div class="col-sm-3">
-            <div class="form-group">
-              <label for="buscarInput">Buscar</label>
-              <input type="text"
-                     class="form-control"
-                     id="buscarInput"
-                     placeholder="texto"
-                     formControlName="buscar">
+              <div class="col-sm-3">
+                <label for="buscarInput">Buscar</label>
+              </div>
+
+            </div>
+
+            <div class="row">
+              <div class="col-sm-3">
+                <div class="form-group">
+
+                  <select (change)="setFiltro($event)"
+                          id="filtro"
+                          class="form-control"
+                          formControlName="filtro">
+                    <option value=""></option>
+                    <option value=""></option>
+                    <option value=""></option>
+                  </select>
+                </div>
+              </div>
+              <div class="col-sm-3">
+                <div class="form-group">
+
+                  <input type="text"
+                         class="form-control"
+                         id="buscarInput"
+                         placeholder="texto"
+                         formControlName="buscar">
+                </div>
+              </div>
+              <div class="col-sm-1  ">
+                <button class="btn btn-success" type="submit">Buscar</button>
+              </div>
+
             </div>
           </div>
-           <button class="btn btn-outline-success my-md-4 my-md-0" type="submit">Buscar</button>  
-      </div>
-  </div>
 
-   <body>
-      <table id="tabela" class="table table-hover">
-          <thead>
+          <body>
+          <table class="table table-hover">
+            <thead>
             <tr>
               <th>Matricula</th>
               <th>Nome Completo</th>
@@ -46,11 +60,18 @@
               <th>Status</th>
               <th>Ação</th>
             </tr>
-          </thead>
-      </table>
-   </body>        
- </div>
+            </thead>
+            <tbody>
+              <tr *ngFor="let item of orientador">
+                <td>{{item.matricula}}</td>
+                <td>{{item.nomeCompleto}}</td>
+                <td>{{item.Abordagem}}</td>
+                <td>{{item.Status}}</td>
+                <td>{{item.acao}}</td>
+              </tr>
+            </tbody>
+          </table>
+          </body>
+        </div>
+    </div>
 </div>
-  
-  
-  

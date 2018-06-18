@@ -33,9 +33,10 @@ export class CadastroOrientadorComponent implements OnInit {
       telefone: [null],
       celular: [null],
       email: [null, Validators.email],
-      turno: [null],
-      periodo: [null],
-      tipoEstagio: [null],
+      titulacao: [null],
+      abordagem: [null],
+      status: [ null],
+      acao: [ null]
     });
   }
 

@@ -1,3 +1,5 @@
+import { OrientadorService } from './../../service/orientador.service';
+import { Orientador } from './../../model/orientador.model';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -8,10 +10,20 @@ import { Component, OnInit } from '@angular/core';
 export class ListarOrietadoresComponent implements OnInit {
 
   ListarOrientadoresComponent: any;
-  constructor() { }
+  public orientador: Orientador[];
+  constructor(
+    private orientadorService: OrientadorService
+  ) { }
 
   ngOnInit() {
+    this.orientadorService.getListaOrientador().subscribe((orientadorService) => {
+      this.orientador = orientadorService;
+      console.log('sucesso!');
+    }, () => {
+      console.log('Erro!');
+    });
   }
+
   setFiltro(event: any): void {
     this.ListarOrientadoresComponent.setFiltro = event.target.value;
   }

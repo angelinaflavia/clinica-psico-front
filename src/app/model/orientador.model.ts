@@ -6,4 +6,6 @@ export class Orientador {
     public email: string;
     public Titulacao: string;
     public Abordagem: string;
+    public Status: string;
+    public acao: string;
 }

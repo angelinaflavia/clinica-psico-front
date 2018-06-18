@@ -8,7 +8,7 @@ import { catchError, tap } from 'rxjs/operators';
 @Injectable()
 export class EstagiarioService {
 
-  private url: string = 'http://localhost:8080/api/estagiario'
+  private url = 'http://localhost:8080/api/estagiario';
 
 
   constructor(
